@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: "jdbc:mysql://${MYSQL_HOST:localhost}:3306/miniautorizador"
+    username: "root"
+    password: 
+    initialize: true
+    driverClassName: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+    ddl-auto: update
+    dialect: com.mysql.jdbc.Driver
+    show-sql: true
