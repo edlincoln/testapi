@@ -22,7 +22,7 @@ public class CartoesServiceImpl implements CartoesService {
 	@Autowired
 	private CartoesRepository repository;
 
-	private static final BigDecimal saldoInicial = new BigDecimal(500l);
+	private static final BigDecimal SALDO_INICIAL = new BigDecimal(500l);
 
 	public Cartoes salvarCartao(CartaoRequest request) throws ValidacaoException {
 		log.debug("Salvando cartão");
@@ -34,7 +34,7 @@ public class CartoesServiceImpl implements CartoesService {
 		Cartoes cartao = Cartoes.builder()
 				.numeroCartao(request.getNumeroCartao())
 				.senha(request.getSenha())
-				.saldo(saldoInicial).build();
+				.saldo(SALDO_INICIAL).build();
 
 		return repository.save(cartao);
 
@@ -42,6 +42,6 @@ public class CartoesServiceImpl implements CartoesService {
 
 	public Cartoes listarSaldoCartao(Long numeroCartao) throws NotFoundException {
 		log.debug("listando cartão: %s", numeroCartao);
-		return repository.findByNumeroCartao(numeroCartao).orElseThrow(() -> (new NotFoundException()));
+		return repository.findByNumeroCartao(numeroCartao).orElseThrow(() -> (new NotFoundException("Not found")));
 	}
 }

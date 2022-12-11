@@ -25,7 +25,7 @@ public class TransacaoServiceImpl implements TransacaoService {
 
 	@Override
 	@Transactional(value = TxType.REQUIRES_NEW)
-	public void processarCompra(TransacaoRequest request) throws ValidacaoException {
+	public Cartoes processarCompra(TransacaoRequest request) throws ValidacaoException {
 		log.debug("Processando transacao");
 		Optional<Cartoes> opCartao = repository.findByNumeroCartao(request.getNumeroCartao());
 		if (!opCartao.isPresent()) {
@@ -46,7 +46,7 @@ public class TransacaoServiceImpl implements TransacaoService {
 		
 		cartao.setSaldo(novoSaldo);
 		
-		repository.save(cartao);
+		return repository.save(cartao);
 	}
 
 }
