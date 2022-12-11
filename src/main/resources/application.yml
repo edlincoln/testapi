@@ -7,6 +7,7 @@ spring:
     driverClassName: com.mysql.jdbc.Driver
   jpa:
     hibernate:
+    generate-ddl: true
     ddl-auto: update
     dialect: com.mysql.jdbc.Driver
     show-sql: true
