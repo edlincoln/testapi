@@ -13,6 +13,7 @@ import com.testapi.testapi.repository.CartoesRepository;
 import com.testapi.testapi.request.TransacaoRequest;
 
 import jakarta.transaction.Transactional;
+import jakarta.transaction.Transactional.TxType;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -22,8 +23,8 @@ public class TransacaoServiceImpl implements TransacaoService {
 	@Autowired
 	private CartoesRepository repository;
 
-	@Transactional
 	@Override
+	@Transactional(value = TxType.REQUIRES_NEW)
 	public void processarCompra(TransacaoRequest request) throws ValidacaoException {
 		log.debug("Processando transacao");
 		Optional<Cartoes> opCartao = repository.findByNumeroCartao(request.getNumeroCartao());
