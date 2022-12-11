@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.testapi.testapi.entity.Cartoes;
+import com.testapi.testapi.enums.TransactionErrorEnum;
 import com.testapi.testapi.exceptions.NotFoundException;
 import com.testapi.testapi.exceptions.ValidacaoException;
 import com.testapi.testapi.repository.CartoesRepository;
@@ -27,10 +28,12 @@ public class CartoesServiceImpl implements CartoesService {
 		log.debug("Salvando cartão");
 		Optional<Cartoes> opCartao = repository.findByNumeroCartao(request.getNumeroCartao());
 		if (opCartao.isPresent()) {
-			throw new ValidacaoException("cartão já cadastrado");
+			throw new ValidacaoException(TransactionErrorEnum.CARTAO_INEXISTENTE.toString());
 		}
 
-		Cartoes cartao = Cartoes.builder().numeroCartao(request.getNumeroCartao()).senha(request.getSenha())
+		Cartoes cartao = Cartoes.builder()
+				.numeroCartao(request.getNumeroCartao())
+				.senha(request.getSenha())
 				.saldo(saldoInicial).build();
 
 		return repository.save(cartao);

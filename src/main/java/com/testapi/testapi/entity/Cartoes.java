@@ -1,13 +1,20 @@
 package com.testapi.testapi.entity;
 
-import jakarta.persistence.*;
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Version;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
-import java.math.BigDecimal;
 
 @Data
 @Entity
@@ -26,6 +33,18 @@ public class Cartoes implements Serializable {
 
     private String senha;
 
+    @NumberFormat(style = Style.CURRENCY)
     private BigDecimal saldo;
+    
+    @Version
+    private Long version;
+    
+    public boolean isValidSenha(String senha) {
+    	return senha.equals(this.senha);
+    }
+    
+    public boolean isValidSaldo(BigDecimal saldo) {
+    	 return saldo.compareTo(this.saldo) < 1 ? true : false;
+    }
 
 }
