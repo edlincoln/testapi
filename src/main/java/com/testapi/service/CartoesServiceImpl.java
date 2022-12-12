@@ -1,4 +1,4 @@
-package com.testapi.testapi.service;
+package com.testapi.service;
 
 import java.math.BigDecimal;
 import java.util.Optional;
@@ -6,12 +6,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.testapi.testapi.entity.Cartoes;
-import com.testapi.testapi.enums.TransactionErrorEnum;
-import com.testapi.testapi.exceptions.NotFoundException;
-import com.testapi.testapi.exceptions.ValidacaoException;
-import com.testapi.testapi.repository.CartoesRepository;
-import com.testapi.testapi.request.CartaoRequest;
+import com.testapi.entity.Cartoes;
+import com.testapi.enums.TransactionErrorEnum;
+import com.testapi.exceptions.NotFoundException;
+import com.testapi.exceptions.ValidacaoException;
+import com.testapi.repository.CartoesRepository;
+import com.testapi.request.CartaoRequest;
 
 import lombok.extern.slf4j.Slf4j;
 

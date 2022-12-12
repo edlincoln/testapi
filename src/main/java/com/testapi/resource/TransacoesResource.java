@@ -1,4 +1,4 @@
-package com.testapi.testapi.resource;
+package com.testapi.resource;
 
 import javax.validation.Valid;
 
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.testapi.testapi.exceptions.ValidacaoException;
-import com.testapi.testapi.request.TransacaoRequest;
-import com.testapi.testapi.service.TransacaoService;
+import com.testapi.exceptions.ValidacaoException;
+import com.testapi.request.TransacaoRequest;
+import com.testapi.service.TransacaoService;
 
 @RestController
 @RequestMapping(value = "transacoes")

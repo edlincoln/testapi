@@ -1,8 +1,9 @@
-package com.testapi.testapi.repository;
+package com.testapi.repository;
 
-import com.testapi.testapi.entity.Cartoes;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.testapi.entity.Cartoes;
 
 import java.util.Optional;
 

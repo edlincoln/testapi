@@ -1,4 +1,4 @@
-package com.testapi.testapi.resource;
+package com.testapi.resource;
 
 import javax.validation.Valid;
 
@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.testapi.testapi.entity.Cartoes;
-import com.testapi.testapi.exceptions.NotFoundException;
-import com.testapi.testapi.exceptions.ValidacaoException;
-import com.testapi.testapi.request.CartaoRequest;
-import com.testapi.testapi.response.CartaoResponse;
-import com.testapi.testapi.response.SaldoResponse;
-import com.testapi.testapi.service.CartoesService;
+import com.testapi.entity.Cartoes;
+import com.testapi.exceptions.NotFoundException;
+import com.testapi.exceptions.ValidacaoException;
+import com.testapi.request.CartaoRequest;
+import com.testapi.response.CartaoResponse;
+import com.testapi.response.SaldoResponse;
+import com.testapi.service.CartoesService;
 
 @RestController
 @RequestMapping(value = "cartoes")

@@ -1,4 +1,4 @@
-package com.testapi.testapi.response;
+package com.testapi.response;
 
 import java.io.Serializable;
 

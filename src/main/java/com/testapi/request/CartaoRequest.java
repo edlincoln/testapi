@@ -1,4 +1,4 @@
-package com.testapi.testapi.request;
+package com.testapi.request;
 
 import lombok.Data;
 

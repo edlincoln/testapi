@@ -1,4 +1,4 @@
-package com.testapi.testapi.entity;
+package com.testapi.entity;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -8,6 +8,8 @@ import java.math.BigDecimal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import com.testapi.entity.Cartoes;
 
 class CartoesTest {
 

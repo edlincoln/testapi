@@ -1,4 +1,4 @@
-package com.testapi.testapi.service;
+package com.testapi.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
@@ -16,11 +16,12 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.testapi.testapi.entity.Cartoes;
-import com.testapi.testapi.enums.TransactionErrorEnum;
-import com.testapi.testapi.exceptions.ValidacaoException;
-import com.testapi.testapi.repository.CartoesRepository;
-import com.testapi.testapi.request.TransacaoRequest;
+import com.testapi.entity.Cartoes;
+import com.testapi.enums.TransactionErrorEnum;
+import com.testapi.exceptions.ValidacaoException;
+import com.testapi.repository.CartoesRepository;
+import com.testapi.request.TransacaoRequest;
+import com.testapi.service.TransacaoServiceImpl;
 
 @ExtendWith(MockitoExtension.class)
 class TransacaoServiceImplTest {

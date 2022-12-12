@@ -1,4 +1,4 @@
-package com.testapi.testapi.exceptions;
+package com.testapi.exceptions;
 
 public class ValidacaoException extends Exception {
 
