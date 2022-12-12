@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -37,7 +38,8 @@ public class Cartoes implements Serializable {
     private BigDecimal saldo;
     
     @Version
-    private Long version;
+    @Column(columnDefinition = "integer DEFAULT 0", nullable = false)
+    private Long version = 0L;
     
     public boolean isValidSenha(String senha) {
     	return senha.equals(this.senha);

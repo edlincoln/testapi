@@ -11,3 +11,7 @@ spring:
     ddl-auto: update
     dialect: com.mysql.jdbc.Driver
     show-sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
