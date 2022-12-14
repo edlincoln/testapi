@@ -1,7 +1,7 @@
 package com.testapi.service;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -22,7 +22,6 @@ import com.testapi.exceptions.NotFoundException;
 import com.testapi.exceptions.ValidacaoException;
 import com.testapi.repository.CartoesRepository;
 import com.testapi.request.CartaoRequest;
-import com.testapi.service.CartoesServiceImpl;
 
 @ExtendWith(MockitoExtension.class)
 class CartoesServiceImplTest {

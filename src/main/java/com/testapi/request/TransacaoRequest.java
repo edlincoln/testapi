@@ -19,7 +19,7 @@ public class TransacaoRequest implements Serializable {
     private Long numeroCartao;
 
     @NotNull(message = "Senha é obrigatório")
-    private String senha;
+    private String senhaCartao;
     
     @NumberFormat(style = Style.CURRENCY)
     private BigDecimal valor;

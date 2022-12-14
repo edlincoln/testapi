@@ -34,7 +34,7 @@ public class TransacaoServiceImpl implements TransacaoService {
 		
 		Cartoes cartao = opCartao.get();
 		
-		if (!cartao.isValidSenha(request.getSenha())) {
+		if (!cartao.isValidSenha(request.getSenhaCartao())) {
 			throw new ValidacaoException(TransactionErrorEnum.SENHA_INVALIDA.toString());
 		}
 		

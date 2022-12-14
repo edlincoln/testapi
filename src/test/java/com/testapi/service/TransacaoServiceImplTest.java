@@ -1,7 +1,8 @@
 package com.testapi.service;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -21,7 +22,6 @@ import com.testapi.enums.TransactionErrorEnum;
 import com.testapi.exceptions.ValidacaoException;
 import com.testapi.repository.CartoesRepository;
 import com.testapi.request.TransacaoRequest;
-import com.testapi.service.TransacaoServiceImpl;
 
 @ExtendWith(MockitoExtension.class)
 class TransacaoServiceImplTest {
@@ -55,7 +55,7 @@ class TransacaoServiceImplTest {
 
 		request = new TransacaoRequest();
 		request.setNumeroCartao(NUMERO);
-		request.setSenha(SENHA);
+		request.setSenhaCartao(SENHA);
 		request.setValor(SALDO_INICIAL);
 	}
 
@@ -86,7 +86,7 @@ class TransacaoServiceImplTest {
     @Test
     void processarCompraSenhaCartaoInvalida() throws ValidacaoException {
     	when(repository.findByNumeroCartao(NUMERO)).thenReturn(Optional.of(cartao));  
-    	request.setSenha(SENHA_ERRADA);
+    	request.setSenhaCartao(SENHA_ERRADA);
         Exception exception = assertThrows(ValidacaoException.class, () -> {
         	service.processarCompra(request);
         });
