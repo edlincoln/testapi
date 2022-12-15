@@ -41,7 +41,7 @@ public class CartoesServiceImpl implements CartoesService {
 	}
 
 	public Cartoes listarSaldoCartao(Long numeroCartao) throws NotFoundException {
-		log.debug("listando cartão: %s", numeroCartao);
+		log.debug("listando cartão: {}", numeroCartao);
 		return repository.findByNumeroCartao(numeroCartao).orElseThrow(() -> (new NotFoundException("Not found")));
 	}
 }

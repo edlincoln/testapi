@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.testapi.entity.Cartoes;
 import com.testapi.enums.TransactionErrorEnum;
@@ -12,8 +13,6 @@ import com.testapi.exceptions.ValidacaoException;
 import com.testapi.repository.CartoesRepository;
 import com.testapi.request.TransacaoRequest;
 
-import jakarta.transaction.Transactional;
-import jakarta.transaction.Transactional.TxType;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -24,7 +23,7 @@ public class TransacaoServiceImpl implements TransacaoService {
 	private CartoesRepository repository;
 
 	@Override
-	@Transactional(value = TxType.REQUIRES_NEW)
+	@Transactional
 	public Cartoes processarCompra(TransacaoRequest request) throws ValidacaoException {
 		log.debug("Processando transacao");
 		Optional<Cartoes> opCartao = repository.findByNumeroCartao(request.getNumeroCartao());
